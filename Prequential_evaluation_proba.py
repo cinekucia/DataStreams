@@ -1,3 +1,4 @@
+import numpy as np
 import time # Add this if not already imported
 from tqdm.auto import tqdm # Add this if not already imported
 from capymoa.evaluation.evaluation import ( # Add these specific imports
