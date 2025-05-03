@@ -1,3 +1,28 @@
+# --- Necessary Imports ---
+import river.ensemble
+import river.tree
+from river.base import Classifier as RiverClassifier # Alias for clarity
+from river.drift import ADWIN
+from river import metrics as river_metrics # If needed for river model setup
+
+from capymoa.base import Classifier, Instance, Schema # Import necessary CapyMOA base classes
+from capymoa.stream import ARFFStream
+from capymoa.evaluation import prequential_evaluation
+from capymoa.evaluation.evaluation import PrequentialResults # For type hinting
+
+from typing import Dict, Any, List, Optional, Union, Sequence
+import numpy as np
+import random # For ARF seed
+
+import numpy as np
+from capymoa.base import Classifier, Instance, Schema # Keep these base imports
+from river.base import Classifier as RiverClassifier
+from typing import Dict, Any, List, Optional, Union, Sequence
+
+from river import forest, tree, metrics, drift, stats # Make sure forest is imported if used like forest.ARFClassifier
+from river.utils.random import poisson
+# import matplotlib.pyplot as plt # Import if you plan to use plotting later
+
 from capymoa.base import Classifier, Instance, Schema # Re-iterate necessary imports
 
 class RiverWrapperClassifier(Classifier):
